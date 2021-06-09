@@ -7,14 +7,3 @@ export const LOGOUT = "LOGOUT";
 
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
-
-export const LISTCART = "LISTCART";
-export const ADDTOCART = "ADDTOCART";
-export const REMOVECART = "REMOVECART";
-
-export const WISHLIST = "WISHLIST";
-export const ADDWISHLIST = "ADDWISHLIST";
-export const DELETEWISHLIST = "DELETEWISHLIST";
-
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";

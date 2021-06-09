@@ -1,7 +1,16 @@
 import React, {Fragment} from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from "react-redux";
+import { logout } from '../../Store/Actions/Auth';
 
-const Header = () => {
+const Header = (props) => {
+
+    console.log(props);
+
+    const logOut = () => {
+        props?.dispatch(logout());
+    }        
+
     return (
         <Fragment>
             <ul>
@@ -25,9 +34,11 @@ const Header = () => {
                     Event 123
                     </NavLink>
                 </li>
+                <li><span onClick={logOut}>Logout</span></li>
             </ul>
         </Fragment>
     )
 }
 
-export default Header;
+//export default Header;
+export default connect(null, null)(Header);

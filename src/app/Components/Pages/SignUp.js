@@ -34,12 +34,15 @@ const SignUp = () => {
                             <label htmlFor="inputPassword" className="sr-only">Password</label>
                             <input type="password" id="inputPassword" className="form-control" name="password" {...register("password", { required: true })} placeholder="Password" />
                             {errors.password && <span>This field is required</span>}
+                            <label htmlFor="inputPhone" className="sr-only">Phone</label>
+                            <input type="text" id="inputPhone" className="form-control" name="phone" {...register("phone", { required: true })} placeholder="Phone" />
+                            {errors.phone && <span>This field is required</span>}
                             <div className="checkbox mb-3">
                                 <label>
                                     <input type="checkbox" value="remember-me" /> Remember me
                                 </label>
                             </div>
-                            <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                            <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
                             <p className="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
                         </form>
                     </div>

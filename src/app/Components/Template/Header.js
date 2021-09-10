@@ -1,25 +1,31 @@
 import React, {Fragment} from 'react';
 import { NavLink } from 'react-router-dom';
-import { connect } from "react-redux";
 import { logout } from '../../Store/Actions/Auth';
+import {useSelector, useDispatch} from "react-redux";
 
 const Header = (props) => {
 
     console.log(props);
 
+    const dispatch = useDispatch();
+
+    const user = useSelector(state => state.client);
+
+    console.log("Use Selector +++++++++++++++++", user);
+
     const logOut = () => {
-        props?.dispatch(logout());
-    }        
+        dispatch(logout());
+    }
 
     return (
         <Fragment>
             <ul>
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/signin">Login</NavLink></li>
-                <li><NavLink to="/signup">Register</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>
                 <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li><NavLink to="/products">Products</NavLink></li>
+                <li><NavLink to="/categories">Categories</NavLink></li>
                 <li><NavLink to="/events/123"
                     isActive={(match, location) => {
                         if (!match) {
@@ -41,4 +47,4 @@ const Header = (props) => {
 }
 
 //export default Header;
-export default connect(null, null)(Header);
+export default Header;

@@ -5,6 +5,10 @@ import Dashboard from "../Components/Pages/Dashboard";
 import SignIn from "../Components/Pages/SignIn";
 import SignUp from "../Components/Pages/SignUp";
 import Contact from "../Components/Pages/Contact";
+import Products from "../Components/Pages/Products";
+import Categories from "../Components/Pages/Categories";
+import AddProduct from "../Components/Pages/AddProduct";
+import AddCategory from "../Components/Pages/AddCategory";
 import Home from "../Components/Pages/Home";
 import About from "../Components/Pages/About";
 
@@ -29,6 +33,18 @@ const Routes = (props) => {
                 { userRole && 
                     <PrivateRoute restricted={false} component={Contact} path="/contact" exact />
                 }
+                { userRole && 
+                    <PrivateRoute restricted={false} component={Products} path="/products" exact />
+                }                        
+                { userRole && 
+                    <PrivateRoute restricted={false} component={Categories} path="/categories" exact />
+                }                        
+                { userRole && 
+                    <PrivateRoute restricted={false} component={AddProduct} path="/addproduct" exact />
+                }
+                { userRole && 
+                    <PrivateRoute restricted={false} component={AddCategory} path="/addcategory" exact />
+                }                        
                 <PrivateRoute component={Home} path="/home" exact />
                 <PrivateRoute component={Dashboard} path="/dashboard" exact />               
                 <Route component={()=> {
